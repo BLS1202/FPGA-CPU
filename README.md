@@ -23,7 +23,16 @@ It is designed to be a simple, CPU core. More features such as pipeline, branch 
 
 ```
 ## Running Simulation
+Iverilog and gtkwave can be used for simple simulation and wave viewing for verifying the behavior of the CPU. 
+
+For simulation:
 ```bash
 cd RTL
 
+iverilog -o rv32.vvp RV32ui_tb.v
+vvp rv32.vvp
+```
+GTKwave viewer:
+```bash
+gtkwave rv32.vcd
 ```
