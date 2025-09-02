@@ -36,3 +36,8 @@ GTKwave viewer:
 ```bash
 gtkwave rv32.vcd
 ```
+If the test from rv32ui passed, the terminal will show the following:
+<img width="991" height="222" alt="image" src="https://github.com/user-attachments/assets/64932bc8-a014-480a-bfa7-8b13d1c180ec" />
+
+
+## Build with Vivado
