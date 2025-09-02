@@ -2,50 +2,24 @@
 
 ## Overview
 
-This project implements a simpe single cycle CPU for RISCV
+This project implements a **single-cycle CPU** on FPGA that supports the **RV32I instruction set** of RISC-V.  
+It is designed to be a simple, CPU core. More features such as pipeline, branch prediction, Out-of-Order execution and caches can be added in the future. 
 
-## Features
+## Key Features
 
-- **High Performance**: Leveraging FPGA for real-time data processing.
-- **Low Latency**: Optimized for high-frequency trading.
-- **Scalable Architecture**: Efficient handling of high volume of orders and updates.
-- **Risk Management**: Built-in risk checks and validations.
-- **Real-time Analytics**: Monitoring system performance and market conditions.
-- **Resilient Design**: State persistence and recovery mechanisms.
+- **RV32I Base Instruction Set Support** (arithmetic, logical, branch, load/store, and system instructions)
+- **Single-Cycle Execution** for all instructions
+- **FPGA Hardware**: The complete design can be used on Digilent Nexys A7 board.
+- **Hardware bootloader** A hardware designed bootloader that can transmit assembly file from PC through UART to the FPGA, and store the instructions in the CPU RAM. This feature is half-way done.
 
-## Architecture
+---
 
-### Components
+## **Project Structure**
+```plaintext
+├── RTL/           # Verilog source files (CPU core, ALU, register file, etc.)
+├── rv32ui-tests/     # Assembly files for simulating CPU
+├── Nexys_board_test/      # Compiled files for synthesizing design on Vivado for Nexys A7 board.
+└── README.md      # This file 
 
-1. **Market Data Handler (FPGA)**
-   - Parses and normalizes incoming market data.
-   - Handles initial data filtering and preprocessing.
 
-2. **Order Entry Handler (FPGA)**
-   - Receives and pre-processes incoming orders.
-   - Performs basic validation checks.
 
-3. **Order Management System (CPU - C++)**
-   - Maintains the state of the order book.
-   - Processes and matches orders.
-   - Executes trades and handles risk management.
-
-4. **FPGA Communication Layer (CPU - C++)**
-   - Manages data exchange between the CPU and FPGA via PCIe/DMA interface.
-
-5. **Trade Execution and Reporting (CPU - C++)**
-   - Executes matched trades and generates reports.
-
-6. **Monitoring and Logging (CPU - C++)**
-   - Monitors system performance.
-   - Logs significant events and transactions.
-
-### Data Flow Diagram
-
-<img width="746" alt="image" src="https://github.com/Kodoh/Orderbook/assets/45899701/e8564ae6-0d79-41f2-94c5-28070c45c8ca">
-
-## References
-
-1. Endrias Project Final Report. Retrieved from [MIT](https://web.mit.edu/6.111/volume2/www/f2019/projects/endrias_Project_Final_Report.pdf).
-2. HFT Book Builder. Retrieved from [Columbia University](https://www.cs.columbia.edu/~sedwards/classes/2024/4840-spring/designs/HFT-Book-Builder.pdf).
-3. Virtual FPGA Lab. Retrieved from [GitHub](https://github.com/os-fpga/Virtual-FPGA-Lab?tab=readme-ov-file).
