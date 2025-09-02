@@ -21,5 +21,9 @@ It is designed to be a simple, CPU core. More features such as pipeline, branch 
 ├── Nexys_board_test/      # Compiled files for synthesizing design on Vivado for Nexys A7 board.
 └── README.md      # This file 
 
+```
+## Running Simulation
+```bash
+cd RTL
 
-## System Overview
+```
