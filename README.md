@@ -41,3 +41,5 @@ If the test from rv32ui passed, the terminal will show the following:
 
 
 ## Build with Vivado
+Constraint and source files are in the Nexys_board_test directory. To synthesize, simply open the Nexys_board_test.xpr file through Vivado. The device is selected as "xc7a100tcsg324-1".
+Then do Run Sythesis -> Run Implementation -> Write Bitstream -> Program Device. 
